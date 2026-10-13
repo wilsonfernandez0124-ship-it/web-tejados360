@@ -28,7 +28,7 @@ const DEFAULT_SERVICES = [
       'Sin riesgo de accidentes ni costes de instalación de andamios',
       'Presupuesto cerrado, transparente y ajustado'
     ],
-    service: 'Inspección y Presupuesto Técnico con Dron',
+    service: 'Inspección Sábados con Dron (Franjas 1h)',
     img: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=1200&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=1200&auto=format&fit=crop',
@@ -48,7 +48,7 @@ const DEFAULT_SERVICES = [
       'Reparación e inspección inmediata de goteras y vías de agua',
       'Impermeabilización continua de máxima estanqueidad'
     ],
-    service: 'Limpieza y Reparación de Tejados y Goteras',
+    service: 'Inspección Sábados Goteras y Cubiertas (1h)',
     img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop',
@@ -68,7 +68,7 @@ const DEFAULT_SERVICES = [
       'Resistencia extrema a los cambios térmicos del invierno gallegos',
       'Acabado continuo sin juntas ni porosidad'
     ],
-    service: 'Impermeabilización con Malla Fibrada y Encapsulado',
+    service: 'Inspección Sábados Malla Fibrada (1h)',
     img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop',
@@ -88,7 +88,7 @@ const DEFAULT_SERVICES = [
       'Revestimiento elástico y pintura hidrófuga de exterior',
       'Eliminación definitiva de filtraciones e imprevistos'
     ],
-    service: 'Limpieza, Revestimiento y Pintura de Fachadas y Terrazas',
+    service: 'Inspección Sábados Fachadas y Terrazas (1h)',
     img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop',
@@ -108,7 +108,7 @@ const DEFAULT_SERVICES = [
       'Empastado o estucado: empastado, lijado e imprimación técnica',
       'Pintura y decoración completa de viviendas y locales'
     ],
-    service: 'Alisado, Empastado y Pintura de Interiores',
+    service: 'Inspección Sábados Pintura Interior (1h)',
     img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop',
@@ -128,7 +128,7 @@ const DEFAULT_SERVICES = [
       'Sellado de juntas, reparación de bajantes y bajadas de pluviales',
       'Cero molestias por andamios en la vía pública'
     ],
-    service: 'Descolgado de Cuerdas en Vertical',
+    service: 'Inspección Sábados Trabajo Vertical (1h)',
     img: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop',
@@ -140,7 +140,7 @@ const DEFAULT_SERVICES = [
 
 const TESTIMONIALS_DATA = [
   {
-    quote: "Teníamos una filtración rebelde en la cubierta que nadie daba detectado. Hicieron la revisión previa con dron, vieron el punto exacto y la impermeabilización quedó impecable.",
+    quote: "Teníamos una filtración rebelde en la cubierta que nadie daba detectado. Hicieron la revisión previa con dron el sábado por la mañana, vieron el punto exacto y la impermeabilización quedó impecable.",
     author: "María S.",
     location: "Oleiros, A Coruña",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
@@ -164,7 +164,7 @@ const TESTIMONIALS_DATA = [
 
 const reasons = [
   { icon: ShieldCheck, t: 'Garantía Técnica por Escrito', d: 'Respaldamos cada intervención en tejados, fachadas e interiores con garantías reales por escrito.' },
-  { icon: FileText, t: 'Presupuesto Cerrado', d: 'Estudios precisos tras la inspección previa para dar un importe definitivo sin imprevistos ni sorpresas.' },
+  { icon: FileText, t: 'Presupuesto Cerrado', d: 'Estudios precisos tras la inspección previa de los sábados para dar un importe definitivo sin imprevistos ni sorpresas.' },
   { icon: Clock, t: 'Atención de Urgencias', d: 'Respuesta rápida para atender goteras, filtraciones críticas y humedades en A Coruña.' },
   { icon: MapPin, t: 'Cobertura en A Coruña y Comarca', d: 'Atendemos en A Coruña, Oleiros, Arteixo, Cambre, Culleredo, Sada y alrededores.' },
 ];
@@ -374,7 +374,7 @@ function ServiceModal({ service, onClose, onBooking }: { service: any; onClose: 
             className="w-full sm:w-auto px-7 py-3 rounded-full bg-[#F26522] hover:bg-[#E65100] text-white text-xs font-black uppercase tracking-wider shadow-lg transition flex items-center justify-center gap-2 hover:scale-102"
           >
             <Calendar className="h-4 w-4" />
-            <span>AGENDAR INSPECCIÓN DRON AHORA</span>
+            <span>AGENDAR SÁBADO (FRANJA 1H)</span>
           </button>
         </div>
 
@@ -402,8 +402,8 @@ function ProcessInteractiveSection({
       id: 0,
       number: "01",
       icon: Calendar,
-      title: "Reserva de Cita & Evaluación Inicial",
-      text: "Coordinamos en línea o telefónicamente la inspección presencial de tu cubierta o fachada en A Coruña y comarca sin comprometer la teja.",
+      title: "Reserva de Cita & Evaluación Inicial (Sábados)",
+      text: "Coordinamos la inspección presencial de tu cubierta o fachada en A Coruña exclusivamente los días sábados en franjas de 1 hora.",
       image: getImage('process_step1', "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop")
     },
     {
@@ -462,10 +462,10 @@ function ProcessInteractiveSection({
               <Sparkles className="h-3.5 w-3.5" /> METODOLOGÍA DE RESERVA
             </div>
             <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-white tracking-tight">
-              Reserva tu Inspección con Dron en 3 Pasos<span className="text-[#F26522]">.</span>
+              Reserva tu Inspección los Sábados en 3 Pasos<span className="text-[#F26522]">.</span>
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm text-slate-400 font-medium">
-              Garantizamos un proceso transparente desde el agendamiento previo hasta la entrega formal de tu informe y garantía por escrito.
+              Garantizamos un proceso transparente con franjas exactas de 1 hora los días sábados.
             </p>
           </div>
 
@@ -536,12 +536,12 @@ function ProcessInteractiveSection({
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            onOpenBooking('Inspección Técnica con Dron');
+                            onOpenBooking('Inspección Técnica Sábados (Franja 1h)');
                           }}
                           className="inline-flex items-center gap-2 rounded-full bg-[#F26522] hover:bg-[#E65100] px-5 py-2 text-[11px] sm:text-xs font-black uppercase tracking-wider text-white shadow-md transition hover:scale-105"
                         >
                           <Calendar className="h-3.5 w-3.5" />
-                          <span>AGENDAR VISITA TÉCNICA AHORA</span>
+                          <span>AGENDAR VISITA SÁBADO (1H)</span>
                           <ArrowRight className="h-3 w-3" />
                         </button>
                       </div>
@@ -587,11 +587,6 @@ function StickyProjectCard({
       style={{ top: `${80 + index * 15}px` }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-        {/*
-          AJUSTE RESPONSIVE PROFESIONAL DE PROYECTOS:
-          Proporción optimizada para dispositivos móviles (aspect-[4/3]) y escritorio (aspect-[16/10])
-          evitando que el texto o los botones se salgan del marco de la pantalla.
-        */}
         <div className="lg:col-span-7 relative w-full aspect-[4/3] sm:aspect-[16/10] min-h-[240px] sm:min-h-[340px] lg:min-h-[420px] rounded-2xl overflow-hidden shadow-2xl select-none group border border-white/10 bg-slate-950">
           <img 
             src={afterImg} 
@@ -665,7 +660,7 @@ function StickyProjectCard({
               onClick={onOpenBooking}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-[#F26522] hover:bg-[#E65100] px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase transition shadow-lg"
             >
-              <span>AGENDAR INSPECCIÓN TÉCNICA</span>
+              <span>AGENDAR INSPECCIÓN SÁBADO</span>
               <ArrowRight className="h-3.5 sm:h-4 w-3.5 sm:w-4" />
             </button>
           </div>
@@ -919,7 +914,7 @@ export default function Home() {
   }, []);
 
   const openBooking = (serviceName?: string) => {
-    setSelectedService(serviceName ?? '');
+    setSelectedService(serviceName ?? 'Inspección Técnica Sábados (Franja 1h)');
     setMenuOpen(false);
     setIsModalOpen(true);
   };
@@ -939,15 +934,7 @@ export default function Home() {
   };
 
   const handleServiceCardClick = (s: any) => {
-    const images = s.images && s.images.length > 0 ? s.images : [s.img];
-    if (images.length > 1) {
-      setActiveServiceCardIndex((prev) => {
-        const current = prev[s.id] || 0;
-        return { ...prev, [s.id]: (current + 1) % images.length };
-      });
-    } else {
-      setModalService(s);
-    }
+    setModalService(s);
   };
 
   useEffect(() => {
@@ -1056,7 +1043,7 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <button
-              onClick={() => openBooking()}
+              onClick={() => openBooking('Inspección Técnica Sábados (Franja 1h)')}
               className="flex items-center gap-2 rounded-full bg-[#F26522] px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-[#F26522]/20 transition hover:bg-[#E65100] sm:px-6 sm:text-sm"
             >
               <Calendar className="h-4 w-4" />
@@ -1090,11 +1077,7 @@ export default function Home() {
         )}
       </header>
 
-      {/*
-        HERO REDISEÑADO RESPONSIVE:
-        En móviles se prioriza la visualización limpia del vídeo con padding pt-28 pb-6,
-        transformando la tarjeta del dron en un banner flotante horizontal que no tapa la acción.
-      */}
+      {/* HERO MINIMALISTA REALINEADO EN PARTE INFERIOR */}
       <section id="inicio" className="relative flex min-h-[85vh] sm:min-h-[92vh] md:min-h-[calc(100vh-5rem)] w-full flex-col justify-end overflow-hidden bg-[#020617] pt-28 pb-6 sm:pb-10">
         <div className="absolute inset-0 z-0 overflow-hidden">
           {isMediaLoading ? (
@@ -1156,11 +1139,11 @@ export default function Home() {
                   </p>
 
                   <button
-                    onClick={() => openBooking('Inspección Técnica Gratuita')}
+                    onClick={() => openBooking('Inspección Técnica Sábados (Franja 1h)')}
                     className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg bg-white/10 hover:bg-[#F26522] border border-white/20 px-2.5 py-1.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-white transition"
                   >
                     <Calendar className="h-3 w-3" />
-                    <span>Solicitar Inspección Dron</span>
+                    <span>Solicitar Inspección Dron (1h)</span>
                   </button>
                 </div>
               </div>
@@ -1265,7 +1248,7 @@ export default function Home() {
                 Servicios diseñados para perdurar<span className="text-[#F26522]">.</span>
               </h2>
               <p className="mt-3 max-w-xl text-xs sm:text-sm text-slate-400 font-medium">
-                Pasa el cursor o toca para rotar las fotografías de cada trabajo, o haz clic para abrir la ficha técnica completa.
+                Pasa el cursor en la PC o toca en el móvil para abrir la ficha técnica completa con rotación de fotografías.
               </p>
             </div>
 
@@ -1294,8 +1277,7 @@ export default function Home() {
             {servicesList.map((s, idx) => {
               const IconComp = (s as any).icon || Building2;
               const cardImages = s.images && s.images.length > 0 ? s.images.slice(0, 3) : [s.img];
-              const activeIdx = activeServiceCardIndex[s.id] || 0;
-              const currentCardImg = cardImages[activeIdx] || cardImages[0];
+              const currentCardImg = cardImages[0];
 
               return (
                 <div
@@ -1319,18 +1301,6 @@ export default function Home() {
                     </div>
                     
                     <div className="flex items-center gap-2">
-                      {cardImages.length > 1 && (
-                        <div className="flex gap-1 bg-black/50 backdrop-blur-md px-2 py-1 rounded-full border border-white/10">
-                          {cardImages.map((_: any, i: number) => (
-                            <span
-                              key={i}
-                              className={`h-1.5 rounded-full transition-all ${
-                                i === activeIdx ? 'w-3 bg-[#F26522]' : 'w-1.5 bg-white/40'
-                              }`}
-                            />
-                          ))}
-                        </div>
-                      )}
                       <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500 group-hover:text-[#F26522]">
                         0{idx + 1}
                       </span>
@@ -1352,7 +1322,7 @@ export default function Home() {
 
                     <div className="pt-2 flex items-center gap-2 text-xs font-black text-[#F26522] group-hover:text-white transition-colors">
                       <Eye className="h-4 w-4" />
-                      <span>{cardImages.length > 1 ? 'Toca para ver fotos / detalles' : 'Ver ficha técnica completa'}</span>
+                      <span>Ver ficha técnica y fotos completas</span>
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 ml-auto" />
                     </div>
                   </div>
@@ -1425,10 +1395,10 @@ export default function Home() {
 
                 <div className="mt-8">
                   <button
-                    onClick={() => openBooking()}
+                    onClick={() => openBooking('Inspección Técnica Sábados (Franja 1h)')}
                     className="inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-8 py-3.5 text-xs font-extrabold uppercase tracking-wider text-white transition hover:bg-slate-900"
                   >
-                    <span>SOLICITAR EVALUACIÓN TÉCNICA</span>
+                    <span>SOLICITAR EVALUACIÓN SÁBADO</span>
                     <ArrowRight className="h-4 w-4 text-[#F26522]" />
                   </button>
                 </div>
@@ -1447,7 +1417,7 @@ export default function Home() {
                       <ShieldCheck className="h-4 w-4" /> Compromiso 360
                     </div>
                     <p className="text-sm font-medium text-slate-200">
-                      Inspección previa por dron sin comprometer la integridad de tus tejas.
+                      Inspección previa los sábados por dron sin comprometer la integridad de tus tejas.
                     </p>
                   </div>
                 </div>
@@ -1532,7 +1502,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN FINAL CON IMAGEN DE FONDO CONFIGURADA DESDE EL PANEL ADMIN AL 100% DE EXTREMO A EXTREMO */}
+      {/* SECCIÓN FINAL CON RECORTE DIAGONAL Y TRABAJADOR CUBRIENDO EL FONDO CONSERVALO EXACTAMENTE IGUAL */}
       <section id="contacto-inspeccion" className="relative w-full min-h-[580px] bg-[#020617] text-white overflow-hidden scroll-mt-20 border-t border-slate-900 flex items-center">
         {/* Imagen de fondo configurada desde el Admin (footer_worker) que cubre el 100% de pantalla */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -1547,13 +1517,13 @@ export default function Home() {
         <ScrollReveal className="w-full">
           <div className="relative z-10 mx-auto max-w-7xl min-h-[520px] lg:min-h-[580px] grid grid-cols-1 lg:grid-cols-12 items-stretch">
             <div className="lg:col-span-6 relative z-10 flex flex-col justify-center">
-              {/* Recorte diagonal naranja optimizado (lg:col-span-6) para dar más espacio a la foto */}
+              {/* Recorte diagonal naranja conservado idénticamente */}
               <div className="absolute inset-0 bg-[#F26522] z-10 lg:[clip-path:polygon(0_0,85%_0,70%_100%,0%_100%)]" />
               <div className="absolute inset-0 bg-[#F26522]/50 backdrop-blur-xs z-0 hidden lg:block lg:[clip-path:polygon(0_0,95%_0,80%_100%,0%_100%)]" />
 
               <div className="relative z-20 max-w-md px-6 py-16 md:px-12 lg:py-20 space-y-6">
                 <span className="text-[11px] font-black uppercase tracking-[0.25em] text-white/90 bg-black/20 px-3.5 py-1.5 rounded-sm inline-block">
-                  PRESUPUESTO SIN COMPROMISO
+                  PRESUPUESTO EXCLUSIVO SÁBADOS
                 </span>
                 
                 <h2 className="text-4xl sm:text-6xl font-black leading-[1.02] text-white tracking-tight">
@@ -1562,18 +1532,18 @@ export default function Home() {
                 </h2>
 
                 <p className="text-sm md:text-base text-white/90 leading-relaxed font-medium">
-                  Solicita una evaluación técnica gratuita y descubre cómo protegemos tu hogar en A Coruña sin imprevistos.
+                  Solicita una evaluación técnica los sábados en franjas fijas de 1 hora para proteger tu hogar en A Coruña.
                 </p>
 
                 <div className="pt-2">
                   <button
-                    onClick={() => openBooking('Inspección Técnica Gratuita')}
+                    onClick={() => openBooking('Inspección Técnica Sábados (Franja 1h)')}
                     className="inline-flex items-center gap-3 bg-[#0A2540] hover:bg-black text-white font-black text-xs uppercase tracking-wider pl-2 pr-6 py-2.5 rounded-sm shadow-2xl transition-transform hover:scale-105"
                   >
                     <div className="bg-white text-[#0A2540] p-2 rounded-xs flex items-center justify-center">
                       <ArrowRight className="h-4 w-4" />
                     </div>
-                    <span>SOLICITAR INSPECCIÓN GRATUITA</span>
+                    <span>SOLICITAR INSPECCIÓN SÁBADO</span>
                   </button>
                 </div>
               </div>
