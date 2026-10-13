@@ -453,15 +453,15 @@ function ProcessInteractiveSection({
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative h-[250vh] bg-[#020617] border-t border-slate-800">
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-12">
+    <div ref={sectionRef} className="relative lg:h-[250vh] bg-[#020617] border-t border-slate-800 py-12 lg:py-0">
+      <div className="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 w-full">
           
-          <div className="mb-10 text-center">
+          <div className="mb-8 lg:mb-10 text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#F26522]/30 bg-[#F26522]/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-[#F26522] mb-3">
               <Sparkles className="h-3.5 w-3.5" /> METODOLOGÍA DE RESERVA
             </div>
-            <h2 className="text-3xl font-black text-white sm:text-5xl md:text-6xl tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-black text-white tracking-tight">
               Reserva tu Inspección con Dron en 3 Pasos<span className="text-[#F26522]">.</span>
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm text-slate-400 font-medium">
@@ -469,10 +469,10 @@ function ProcessInteractiveSection({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-6">
-              <div className="relative h-[360px] sm:h-[440px] w-full rounded-3xl overflow-hidden border border-white/15 bg-slate-900 shadow-[0_25px_50px_rgba(0,0,0,0.8)]">
+              <div className="relative h-[260px] sm:h-[360px] lg:h-[440px] w-full rounded-3xl overflow-hidden border border-white/15 bg-slate-900 shadow-[0_25px_50px_rgba(0,0,0,0.8)]">
                 {processSteps.map((step, idx) => (
                   <img
                     key={step.id}
@@ -485,18 +485,18 @@ function ProcessInteractiveSection({
                 ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                 
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-bold text-white z-10">
+                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 flex items-center justify-between text-xs font-bold text-white z-10">
                   <span className="rounded-full bg-[#F26522] px-3.5 py-1 uppercase tracking-wider text-[10px] font-black shadow-lg">
                     Paso {processSteps[activeStep].number} de 03
                   </span>
-                  <span className="bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-slate-300">
+                  <span className="bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-slate-300 text-[10px] sm:text-xs">
                     Tejados 360 · A Coruña
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-6 space-y-4">
+            <div className="lg:col-span-6 space-y-3 sm:space-y-4">
               {processSteps.map((step, idx) => {
                 const IconComponent = step.icon;
                 const isActive = activeStep === idx;
@@ -505,22 +505,22 @@ function ProcessInteractiveSection({
                   <div
                     key={step.id}
                     onClick={() => setActiveStep(idx)}
-                    className={`rounded-3xl border p-6 transition-all duration-500 cursor-pointer ${
+                    className={`rounded-3xl border p-4 sm:p-6 transition-all duration-500 cursor-pointer ${
                       isActive
-                        ? 'bg-slate-900 border-[#F26522] shadow-[0_10px_30px_rgba(242,101,34,0.25)] -translate-y-1'
+                        ? 'bg-slate-900 border-[#F26522] shadow-[0_10px_30px_rgba(242,101,34,0.25)] -translate-y-0.5'
                         : 'bg-slate-900/40 border-white/10 hover:border-white/20 hover:bg-slate-900/60'
                     }`}
                   >
-                    <div className="flex items-center gap-4">
-                      <div className={`h-12 w-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
+                    <div className="flex items-center gap-3.5">
+                      <div className={`h-10 sm:h-12 w-10 sm:w-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
                         isActive ? 'bg-[#F26522] text-white shadow-lg shadow-[#F26522]/30' : 'bg-white/5 border border-white/10 text-slate-400'
                       }`}>
-                        <IconComponent className="h-6 w-6" />
+                        <IconComponent className="h-5 sm:h-6 w-5 sm:w-6" />
                       </div>
                       
                       <div>
-                        <span className="text-[10px] font-black uppercase text-[#F26522] tracking-wider">PASO {step.number}</span>
-                        <h3 className={`text-base sm:text-lg font-black transition-colors ${
+                        <span className="text-[9px] sm:text-[10px] font-black uppercase text-[#F26522] tracking-wider">PASO {step.number}</span>
+                        <h3 className={`text-sm sm:text-lg font-black transition-colors ${
                           isActive ? 'text-white' : 'text-slate-300'
                         }`}>
                           {step.title}
@@ -529,7 +529,7 @@ function ProcessInteractiveSection({
                     </div>
 
                     {isActive && (
-                      <div className="mt-4 pt-4 border-t border-white/10 space-y-4 animate-in fade-in duration-300">
+                      <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/10 space-y-3 animate-in fade-in duration-300">
                         <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
                           {step.text}
                         </p>
@@ -538,11 +538,11 @@ function ProcessInteractiveSection({
                             e.stopPropagation();
                             onOpenBooking('Inspección Técnica con Dron');
                           }}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#F26522] hover:bg-[#E65100] px-6 py-2.5 text-xs font-black uppercase tracking-wider text-white shadow-md transition hover:scale-105"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#F26522] hover:bg-[#E65100] px-5 py-2 text-[11px] sm:text-xs font-black uppercase tracking-wider text-white shadow-md transition hover:scale-105"
                         >
-                          <Calendar className="h-4 w-4" />
+                          <Calendar className="h-3.5 w-3.5" />
                           <span>AGENDAR VISITA TÉCNICA AHORA</span>
-                          <ArrowRight className="h-3.5 w-3.5" />
+                          <ArrowRight className="h-3 w-3" />
                         </button>
                       </div>
                     )}
@@ -583,16 +583,16 @@ function StickyProjectCard({
 
   return (
     <div
-      className="sticky top-28 w-full rounded-3xl bg-slate-900 border border-white/15 p-5 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl mb-12 transition-all duration-500"
-      style={{ top: `${110 + index * 20}px` }}
+      className="sticky top-20 sm:top-28 w-full rounded-3xl bg-slate-900 border border-white/15 p-4 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl mb-8 sm:mb-12 transition-all duration-500"
+      style={{ top: `${80 + index * 15}px` }}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
         {/*
-          AJUSTE PROFESIONAL PROYECTOS:
-          Se utiliza aspect-[4/3] en dispositivos móviles y aspect-[16/10] en pantallas de escritorio
-          con un min-h flexible (min-h-[320px] lg:min-h-[420px]) para encuadrar completamente las fotos del comparador sin cortarlas.
+          AJUSTE RESPONSIVE PROFESIONAL DE PROYECTOS:
+          Proporción optimizada para dispositivos móviles (aspect-[4/3]) y escritorio (aspect-[16/10])
+          evitando que el texto o los botones se salgan del marco de la pantalla.
         */}
-        <div className="lg:col-span-7 relative w-full aspect-[4/3] md:aspect-[16/10] min-h-[320px] lg:min-h-[420px] rounded-2xl overflow-hidden shadow-2xl select-none group border border-white/10 bg-slate-950">
+        <div className="lg:col-span-7 relative w-full aspect-[4/3] sm:aspect-[16/10] min-h-[240px] sm:min-h-[340px] lg:min-h-[420px] rounded-2xl overflow-hidden shadow-2xl select-none group border border-white/10 bg-slate-950">
           <img 
             src={afterImg} 
             alt="Resultado Final" 
@@ -607,16 +607,16 @@ function StickyProjectCard({
             draggable={false}
           />
 
-          <span className="absolute left-4 top-4 z-10 rounded-lg bg-black/80 border border-white/10 px-3 py-1 text-[10px] font-black uppercase text-slate-200 backdrop-blur-md">
+          <span className="absolute left-3 top-3 sm:left-4 sm:top-4 z-10 rounded-lg bg-black/80 border border-white/10 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase text-slate-200 backdrop-blur-md">
             ANTES
           </span>
-          <span className="absolute right-4 top-4 z-10 rounded-lg bg-[#F26522] px-3 py-1 text-[10px] font-black uppercase text-white shadow-lg backdrop-blur-md">
+          <span className="absolute right-3 top-3 sm:right-4 sm:top-4 z-10 rounded-lg bg-[#F26522] px-2.5 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase text-white shadow-lg backdrop-blur-md">
             DESPUÉS
           </span>
 
           <div className="pointer-events-none absolute inset-y-0 w-0.5 bg-white/90 shadow-[0_0_15px_rgba(242,101,34,0.9)] z-20" style={{ left: `${sliderPos}%` }}>
-            <div className="absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-[#0A2540] text-white shadow-2xl">
-              <Sliders className="h-4 w-4 text-[#F26522]" />
+            <div className="absolute top-1/2 left-1/2 flex h-8 sm:h-10 w-8 sm:w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-[#0A2540] text-white shadow-2xl">
+              <Sliders className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-[#F26522]" />
             </div>
           </div>
 
@@ -636,8 +636,8 @@ function StickyProjectCard({
               <button
                 key={i}
                 onClick={() => setImgIdx(i)}
-                className={`h-2.5 rounded-full transition-all ${
-                  imgIdx === i ? 'w-6 bg-[#F26522]' : 'w-2.5 bg-white/40 hover:bg-white'
+                className={`h-2 sm:h-2.5 rounded-full transition-all ${
+                  imgIdx === i ? 'w-5 sm:w-6 bg-[#F26522]' : 'w-2 sm:w-2.5 bg-white/40 hover:bg-white'
                 }`}
                 aria-label={`Ver perspectiva ${i + 1}`}
               />
@@ -645,28 +645,28 @@ function StickyProjectCard({
           </div>
         </div>
 
-        <div className="lg:col-span-5 space-y-4 text-left">
-          <div className="flex items-center gap-3 text-xs font-bold text-slate-400">
+        <div className="lg:col-span-5 space-y-3 sm:space-y-4 text-left">
+          <div className="flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-bold text-slate-400">
             <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5 text-[#F26522]" /> {project.date}</span>
             <span>•</span>
             <span className="flex items-center gap-1"><MapPin className="h-3.5 w-3.5 text-[#F26522]" /> {project.location}</span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+          <h3 className="text-xl sm:text-3xl font-black text-white leading-tight">
             {project.title}
           </h3>
 
-          <p className="text-sm text-slate-300 leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium line-clamp-3 sm:line-clamp-none">
             {project.desc}
           </p>
 
-          <div className="pt-2">
+          <div className="pt-1 sm:pt-2">
             <button
               onClick={onOpenBooking}
-              className="inline-flex items-center gap-3 rounded-full bg-[#F26522] hover:bg-[#E65100] px-6 py-3 text-xs font-extrabold text-white tracking-wider uppercase transition shadow-lg"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-[#F26522] hover:bg-[#E65100] px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-extrabold text-white tracking-wider uppercase transition shadow-lg"
             >
               <span>AGENDAR INSPECCIÓN TÉCNICA</span>
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-3.5 sm:h-4 w-3.5 sm:w-4" />
             </button>
           </div>
         </div>
@@ -692,13 +692,13 @@ function Rope3DAnimationSection({ siteImages }: { siteImages: Record<string, str
   const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
 
   return (
-    <section id="trabajos-verticales" className="relative overflow-hidden bg-[#020617] py-28 text-white border-t border-slate-800">
+    <section id="trabajos-verticales" className="relative overflow-hidden bg-[#020617] py-16 sm:py-28 text-white border-t border-slate-800">
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <ScrollReveal>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#F26522]/30 bg-[#F26522]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#F26522] backdrop-blur-md">
+            <div className="lg:col-span-6 space-y-5 lg:space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#F26522]/30 bg-[#F26522]/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-[#F26522] backdrop-blur-md">
                 <Sparkles className="h-3.5 w-3.5 text-[#F26522]" />
                 <span>Técnica Certificada de Altura</span>
               </div>
@@ -708,21 +708,21 @@ function Rope3DAnimationSection({ siteImages }: { siteImages: Record<string, str
                 <span className="text-[#F26522]">Descolgado Vertical</span> en Edificios.
               </h2>
 
-              <p className="text-sm md:text-base text-slate-300 leading-relaxed font-medium">
+              <p className="text-xs sm:text-base text-slate-300 leading-relaxed font-medium">
                 Intervenimos fachadas, patios interiores y puntos inaccesibles colgados de cuerdas homologadas. Eliminamos los costes e inconvenientes de instalar andamios pesados en A Coruña.
               </p>
 
-              <ul className="space-y-3.5 pt-2 text-sm text-slate-300 font-semibold">
+              <ul className="space-y-3 pt-1 text-xs sm:text-sm text-slate-300 font-semibold">
                 <li className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-[#F26522]" />
+                  <CheckCircle2 className="h-4 sm:h-5 w-4 sm:w-5 text-[#F26522] shrink-0" />
                   <span>Técnicos homologados para trabajos de alto riesgo en suspensión</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-[#F26522]" />
+                  <CheckCircle2 className="h-4 sm:h-5 w-4 sm:w-5 text-[#F26522] shrink-0" />
                   <span>Instalación de líneas de vida y arneses con doble sistema anticaídas</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-[#F26522]" />
+                  <CheckCircle2 className="h-4 sm:h-5 w-4 sm:w-5 text-[#F26522] shrink-0" />
                   <span>Reparación inmediata de grietas, bajantes, sellado de juntas y pintura</span>
                 </li>
               </ul>
@@ -736,7 +736,7 @@ function Rope3DAnimationSection({ siteImages }: { siteImages: Record<string, str
                   transform: `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
                   transition: 'transform 0.15s ease-out',
                 }}
-                className="relative w-full max-w-md h-[520px] rounded-3xl overflow-hidden border border-white/20 bg-slate-900 shadow-[0_25px_60px_rgba(242,101,34,0.2)] group cursor-pointer"
+                className="relative w-full max-w-md h-[380px] sm:h-[520px] rounded-3xl overflow-hidden border border-white/20 bg-slate-900 shadow-[0_25px_60px_rgba(242,101,34,0.2)] group cursor-pointer"
               >
                 <img
                   src={getImage('vertical_work', "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=1200&auto=format&fit=crop")}
@@ -745,16 +745,16 @@ function Rope3DAnimationSection({ siteImages }: { siteImages: Record<string, str
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
-                <div className="absolute top-4 left-4 z-10 rounded-full bg-slate-950/80 border border-[#F26522]/40 px-3.5 py-1.5 text-xs font-extrabold uppercase text-[#F26522] backdrop-blur-md">
+                <div className="absolute top-4 left-4 z-10 rounded-full bg-slate-950/80 border border-[#F26522]/40 px-3 py-1 text-[10px] sm:text-xs font-extrabold uppercase text-[#F26522] backdrop-blur-md">
                   TRABAJOS VERTICALES CERTIFICADOS
                 </div>
 
                 <div className="absolute bottom-6 left-6 right-6 z-10 space-y-2">
-                  <h3 className="text-xl font-black text-white">Acceso Inmediato sin Andamios</h3>
+                  <h3 className="text-lg sm:text-xl font-black text-white">Acceso Inmediato sin Andamios</h3>
                   <p className="text-xs text-slate-300 leading-relaxed font-medium">
                     Sistemas homologados de suspensión para intervenciones limpias, rápidas y seguras en A Coruña.
                   </p>
-                  <div className="inline-flex items-center gap-2 text-[11px] font-bold text-amber-400 bg-black/70 px-3 py-1 rounded-full border border-amber-400/30 backdrop-blur-md">
+                  <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-bold text-amber-400 bg-black/70 px-3 py-1 rounded-full border border-amber-400/30 backdrop-blur-md">
                     <ShieldCheck className="h-3.5 w-3.5 text-amber-400" /> Certificación IRATA & ANETVA
                   </div>
                 </div>
@@ -1090,8 +1090,12 @@ export default function Home() {
         )}
       </header>
 
-      {/* HERO MINIMALISTA REALINEADO EN PARTE INFERIOR */}
-      <section id="inicio" className="relative flex min-h-[92vh] md:min-h-[calc(100vh-5rem)] w-full flex-col justify-end overflow-hidden bg-[#020617] pt-12 pb-10">
+      {/*
+        HERO REDISEÑADO RESPONSIVE:
+        En móviles se prioriza la visualización limpia del vídeo con padding pt-28 pb-6,
+        transformando la tarjeta del dron en un banner flotante horizontal que no tapa la acción.
+      */}
+      <section id="inicio" className="relative flex min-h-[85vh] sm:min-h-[92vh] md:min-h-[calc(100vh-5rem)] w-full flex-col justify-end overflow-hidden bg-[#020617] pt-28 pb-6 sm:pb-10">
         <div className="absolute inset-0 z-0 overflow-hidden">
           {isMediaLoading ? (
             <div className="flex h-full w-full items-center justify-center bg-[#020617]">
@@ -1111,23 +1115,23 @@ export default function Home() {
           ) : (
             <img src={heroImageUrl || ''} alt="Rehabilitación de fachadas y cubiertas en A Coruña" className="h-full w-full object-cover object-center" fetchPriority="high" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/30 to-[#020617]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-[#020617]/20" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 w-full pt-20 pb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 w-full pt-12 pb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-end">
             
-            <div className="lg:col-span-8 space-y-5 text-left">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none drop-shadow-2xl">
+            <div className="lg:col-span-8 space-y-4 sm:space-y-5 text-left">
+              <h1 className="text-3xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-tight sm:leading-none drop-shadow-2xl">
                 Estamos construyendo <br className="hidden sm:block" />
                 tejados que resisten <br className="hidden sm:block" />
                 el paso del tiempo<span className="text-[#F26522]">.</span>
               </h1>
 
-              <div className="pt-2">
+              <div className="pt-1 sm:pt-2">
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="inline-flex items-center gap-3 rounded-full bg-[#F26522] hover:bg-[#E65100] px-7 py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_10px_25px_rgba(242,101,34,0.4)] transition hover:scale-105"
+                  className="inline-flex items-center gap-2.5 sm:gap-3 rounded-full bg-[#F26522] hover:bg-[#E65100] px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_10px_25px_rgba(242,101,34,0.4)] transition hover:scale-105"
                 >
                   <Phone className="h-4 w-4 text-white" />
                   <span>{siteConfig.phone}</span>
@@ -1135,13 +1139,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/*
-              WIDGET FLOTANTE HERO OPTIMIZADO:
-              Se ajustaron las dimensiones máximas (max-w-[260px]) para que no obstruya la vista del reproductor de vídeo principal en la parte superior.
-            */}
-            <div className="lg:col-span-4 flex justify-start lg:justify-end">
-              <div className="w-full max-w-[260px] rounded-2xl border border-white/15 bg-slate-950/50 p-3 backdrop-blur-lg shadow-xl space-y-2.5 text-left transition hover:border-[#F26522]/50">
-                <div className="h-24 w-full rounded-xl overflow-hidden border border-white/10">
+            {/* WIDGET DRON ULTRA-COMPACTO Y ELEGANTE */}
+            <div className="lg:col-span-4 flex justify-start lg:justify-end mt-2 lg:mt-0">
+              <div className="w-full lg:max-w-[260px] rounded-2xl border border-white/15 bg-slate-950/60 p-2.5 sm:p-3 backdrop-blur-md shadow-xl flex lg:flex-col items-center lg:items-stretch gap-3 lg:gap-2.5 text-left">
+                <div className="h-16 lg:h-24 w-20 lg:w-full shrink-0 rounded-xl overflow-hidden border border-white/10">
                   <img
                     src={getImage('hero_card', "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop")}
                     alt="Inspección con Dron de Tejados 360"
@@ -1149,47 +1150,49 @@ export default function Home() {
                   />
                 </div>
 
-                <p className="text-[11px] font-semibold text-white/90 leading-snug">
-                  No permita que las pequeñas reparaciones se conviertan en grandes reconstrucciones<span className="text-[#F26522]">.</span>
-                </p>
+                <div className="flex-1 space-y-2">
+                  <p className="text-[10px] sm:text-[11px] font-semibold text-white/90 leading-snug line-clamp-2 lg:line-clamp-none">
+                    No permita que pequeñas goteras se conviertan en grandes reconstrucciones<span className="text-[#F26522]">.</span>
+                  </p>
 
-                <button
-                  onClick={() => openBooking('Inspección Técnica Gratuita')}
-                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg bg-white/10 hover:bg-[#F26522] border border-white/20 px-3 py-2 text-[10px] font-black uppercase tracking-wider text-white transition"
-                >
-                  <Calendar className="h-3.5 w-3.5" />
-                  <span>Solicitar Inspección Dron</span>
-                </button>
+                  <button
+                    onClick={() => openBooking('Inspección Técnica Gratuita')}
+                    className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg bg-white/10 hover:bg-[#F26522] border border-white/20 px-2.5 py-1.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-white transition"
+                  >
+                    <Calendar className="h-3 w-3" />
+                    <span>Solicitar Inspección Dron</span>
+                  </button>
+                </div>
               </div>
             </div>
 
           </div>
         </div>
 
-        <div className="relative z-10 border-t border-white/15 bg-slate-950/60 backdrop-blur-md py-3.5 px-6">
-          <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-white/90">
-            <div className="flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-[#F26522]" />
+        <div className="relative z-10 border-t border-white/15 bg-slate-950/60 backdrop-blur-md py-3 px-4 sm:px-6">
+          <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-3 text-[11px] sm:text-xs font-bold text-white/90">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-[#F26522]" />
                 <span>Con licencia y seguro</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-[#F26522]" />
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 sm:h-4 w-3.5 sm:w-4 text-[#F26522]" />
                 <span>Presupuestos gratuitos</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="hidden sm:flex items-center gap-1.5">
                 <Award className="h-4 w-4 text-[#F26522]" />
                 <span>Calidad garantizada</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-amber-400 font-extrabold">
+            <div className="flex items-center gap-1.5 text-amber-400 font-extrabold ml-auto sm:ml-0">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                  <Star key={i} className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-current" />
                 ))}
               </div>
-              <span className="text-white text-xs">4.9 MUY BIEN VALORADO</span>
+              <span className="text-white text-[10px] sm:text-xs">4.9 EXCELENTE</span>
             </div>
           </div>
         </div>
@@ -1364,7 +1367,7 @@ export default function Home() {
       {/* SECCIÓN PROYECTOS EN PILA CON COMPARADOR ANTES / DESPUÉS DINÁMICO */}
       <section id="proyectos-framer" className="scroll-mt-20 bg-[#020617] py-24 text-white relative">
         <div className="mx-auto max-w-6xl px-5 sm:px-6">
-          <ScrollReveal className="mb-20 text-center">
+          <ScrollReveal className="mb-12 sm:mb-20 text-center">
             <span className="text-xs font-black uppercase tracking-[0.25em] text-[#F26522]">PROYECTOS DESTACADOS</span>
             <h2 className="mt-2 text-3xl font-black md:text-5xl text-white">
               Transformaciones Reales Proyectadas<span className="text-[#F26522]">.</span>
@@ -1374,7 +1377,7 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          <div className="relative space-y-12">
+          <div className="relative space-y-8 sm:space-y-12">
             {featuredProjectsDynamic.map((proj: any, idx: number) => (
               <StickyProjectCard
                 key={idx}
