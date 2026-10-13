@@ -587,7 +587,12 @@ function StickyProjectCard({
       style={{ top: `${110 + index * 20}px` }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-7 relative h-[340px] sm:h-[400px] rounded-2xl overflow-hidden shadow-2xl select-none group border border-white/10 bg-slate-950">
+        {/*
+          AJUSTE PROFESIONAL PROYECTOS:
+          Se utiliza aspect-[4/3] en dispositivos móviles y aspect-[16/10] en pantallas de escritorio
+          con un min-h flexible (min-h-[320px] lg:min-h-[420px]) para encuadrar completamente las fotos del comparador sin cortarlas.
+        */}
+        <div className="lg:col-span-7 relative w-full aspect-[4/3] md:aspect-[16/10] min-h-[320px] lg:min-h-[420px] rounded-2xl overflow-hidden shadow-2xl select-none group border border-white/10 bg-slate-950">
           <img 
             src={afterImg} 
             alt="Resultado Final" 
@@ -1130,10 +1135,13 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Widget Flotante Sutil con Imagen Dinámica hero_card */}
+            {/*
+              WIDGET FLOTANTE HERO OPTIMIZADO:
+              Se ajustaron las dimensiones máximas (max-w-[260px]) para que no obstruya la vista del reproductor de vídeo principal en la parte superior.
+            */}
             <div className="lg:col-span-4 flex justify-start lg:justify-end">
-              <div className="w-full sm:w-[310px] rounded-3xl border border-white/15 bg-slate-950/40 p-4 backdrop-blur-md shadow-2xl space-y-3 text-left transition hover:border-[#F26522]/50">
-                <div className="h-28 w-full rounded-2xl overflow-hidden border border-white/10">
+              <div className="w-full max-w-[260px] rounded-2xl border border-white/15 bg-slate-950/50 p-3 backdrop-blur-lg shadow-xl space-y-2.5 text-left transition hover:border-[#F26522]/50">
+                <div className="h-24 w-full rounded-xl overflow-hidden border border-white/10">
                   <img
                     src={getImage('hero_card', "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop")}
                     alt="Inspección con Dron de Tejados 360"
@@ -1141,13 +1149,13 @@ export default function Home() {
                   />
                 </div>
 
-                <p className="text-xs font-semibold text-white/90 leading-snug">
+                <p className="text-[11px] font-semibold text-white/90 leading-snug">
                   No permita que las pequeñas reparaciones se conviertan en grandes reconstrucciones<span className="text-[#F26522]">.</span>
                 </p>
 
                 <button
                   onClick={() => openBooking('Inspección Técnica Gratuita')}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-[#F26522] border border-white/20 px-4 py-2.5 text-[11px] font-black uppercase tracking-wider text-white transition"
+                  className="w-full inline-flex items-center justify-center gap-1.5 rounded-lg bg-white/10 hover:bg-[#F26522] border border-white/20 px-3 py-2 text-[10px] font-black uppercase tracking-wider text-white transition"
                 >
                   <Calendar className="h-3.5 w-3.5" />
                   <span>Solicitar Inspección Dron</span>
